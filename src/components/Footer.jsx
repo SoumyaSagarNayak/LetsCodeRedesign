@@ -81,22 +81,11 @@ export default function Footer() {
         {/* Brand Column (spans 2 columns on large screens) */}
         <div className="lg:col-span-2 flex flex-col items-start">
           <a href="#" className="flex items-center gap-3 mb-5 group">
-            <div className="w-8 h-8 rounded-lg bg-card border border-border/80 flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.1)] group-hover:shadow-[0_0_20px_rgba(16,185,129,0.35)] group-hover:border-[#10B981]/40 transition-all duration-200">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" className="w-5.5 h-5.5">
-                <path d="M72,20 C62,11 48,8 35,13 C18,20 8,38 10,56 C12,74 27,89 45,91 C58,93 72,87 78,76 C64,83 48,82 38,72 C25,59 25,38 38,25 C47,16 61,14 72,20 Z" fill="url(#footOuterGrad)" />
-                <path d="M50,22 C34,22 22,34 22,50 C22,66 34,78 50,78 C38,74 32,64 32,50 C32,36 38,26 50,22 Z" fill="url(#footInnerGrad)" />
-                <defs>
-                  <linearGradient id="footOuterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#10B981" />
-                    <stop offset="100%" stop-color="#059669" />
-                  </linearGradient>
-                  <linearGradient id="footInnerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#047857" />
-                    <stop offset="100%" stop-color="#064e3b" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
+            <img
+              src="/logo.webp"
+              alt="Let's Code"
+              className="w-8 h-8 rounded-lg object-contain bg-black shadow-[0_0_15px_rgba(16,185,129,0.15)] group-hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all duration-200"
+            />
             <span className="font-display font-bold text-lg text-white tracking-tight">
               Let's Code
             </span>

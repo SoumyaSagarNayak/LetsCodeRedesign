@@ -44,20 +44,11 @@ export default function LoginModal({ isOpen, onClose, onLoginSuccess }) {
         {/* Logo and Headings */}
         <div className="flex flex-col items-center text-center mb-8">
           <div className="w-12 h-12 mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" className="w-full h-full drop-shadow-[0_0_10px_rgba(16,185,129,0.3)]">
-              <path d="M72,20 C62,11 48,8 35,13 C18,20 8,38 10,56 C12,74 27,89 45,91 C58,93 72,87 78,76 C64,83 48,82 38,72 C25,59 25,38 38,25 C47,16 61,14 72,20 Z" fill="url(#modalOuterGrad)" />
-              <path d="M50,22 C34,22 22,34 22,50 C22,66 34,78 50,78 C38,74 32,64 32,50 C32,36 38,26 50,22 Z" fill="url(#modalInnerGrad)" />
-              <defs>
-                <linearGradient id="modalOuterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#10B981" />
-                  <stop offset="100%" stop-color="#059669" />
-                </linearGradient>
-                <linearGradient id="modalInnerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#047857" />
-                  <stop offset="100%" stop-color="#064e3b" />
-                </linearGradient>
-              </defs>
-            </svg>
+            <img
+              src="/logo.webp"
+              alt="Let's Code"
+              className="w-full h-full object-contain bg-black rounded-lg shadow-[0_0_15px_rgba(16,185,129,0.25)]"
+            />
           </div>
           <h3 className="font-display font-bold text-2xl text-white tracking-tight">
             Welcome to Let's Code

@@ -1,4 +1,5 @@
 import React from 'react';
+import { ChevronRight } from 'lucide-react';
 
 export default function JourneySteps() {
   const steps = [
@@ -7,81 +8,95 @@ export default function JourneySteps() {
       emoji: '📚',
       title: 'Learn',
       description: 'DSA roadmaps, system design, DevOps & ML guides',
+      bottomColor: 'border-[#00E5FF]',
     },
     {
       number: '02',
       emoji: '🧪',
       title: 'Practice',
       description: 'Mock interviews, company PYQs & DSA challenges',
+      bottomColor: 'border-[#9D5CFF]',
     },
     {
       number: '03',
       emoji: '🤖',
       title: 'Optimize',
       description: 'AI tools for resume, LinkedIn & job ready score',
+      bottomColor: 'border-[#F59E0B]',
     },
     {
       number: '04',
       emoji: '🌐',
       title: 'Connect',
       description: '16+ tech & city communities on Discord',
+      bottomColor: 'border-[#10B981]',
     },
     {
       number: '05',
       emoji: '💼',
       title: 'Get Hired',
       description: 'Job alerts, startup opps & interview experiences',
+      bottomColor: 'border-[#E1306C]',
     },
   ];
 
   return (
-    <section id="learn" className="relative bg-[#0F172A] py-20 px-6 md:px-12 w-full overflow-hidden">
+    <section id="learn" className="relative bg-[#0F172A] py-20 px-6 md:px-12 w-full overflow-hidden border-b border-border/20">
       <div className="max-w-6xl mx-auto flex flex-col items-center">
         {/* Eyebrow */}
         <div className="px-3 py-1 rounded-full border border-cyan/20 bg-cyan/5 text-cyan text-xs font-semibold uppercase tracking-wider mb-3">
-          ⚡ Placement Roadmap
+          ⚡ Your Placement Roadmap
         </div>
 
         {/* Section Title */}
         <h2 className="font-display text-2xl md:text-4xl lg:text-[2.6rem] text-center font-bold text-white tracking-tight mb-4">
-          From Student to Employed in 5 steps
+          From Student to Employed
         </h2>
         <p className="font-body text-sm md:text-base text-muted text-center max-w-lg mb-16 leading-relaxed">
-          Every stage of your placement journey — covered in one free platform.
+          Every stage of your placement journey — covered in one platform.
         </p>
 
         {/* Steps container */}
         <div className="relative w-full">
           {/* Horizontal Line for Desktop */}
           <div 
-            className="absolute top-[28px] left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-transparent via-violet via-cyan to-transparent hidden lg:block -z-10" 
+            className="absolute top-[50%] left-[5%] right-[5%] h-[2px] bg-gradient-to-r from-transparent via-violet via-cyan to-transparent hidden lg:block -z-10" 
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-4 w-full">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 w-full font-body">
             {steps.map((step, idx) => (
-              <div 
-                key={step.title} 
-                className="reveal flex flex-col items-center text-center px-4 group"
-              >
-                {/* Circle Icon */}
-                <div className="relative w-14 h-14 rounded-full bg-card border border-border group-hover:border-violet2 group-hover:scale-105 shadow-[0_0_15px_rgba(124,58,237,0.1)] group-hover:shadow-[0_0_25px_rgba(157,92,255,0.4)] flex items-center justify-center text-xl transition-all duration-300 ease-out z-10">
-                  <span>{step.emoji}</span>
-                  {/* Step counter inside or absolute */}
-                  <span className="absolute -top-1 -right-1 bg-violet font-mono text-[9px] text-white w-4.5 h-4.5 rounded-full flex items-center justify-center border border-[#0F172A] font-bold">
+              <React.Fragment key={step.title}>
+                <div 
+                  className={`reveal relative flex-1 w-full lg:max-w-[200px] min-h-[170px] bg-card hover:bg-card2 border border-border/80 hover:border-violet/60 rounded-xl p-5 flex flex-col items-start text-left group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(124,58,237,0.15)] overflow-hidden border-b-4 ${step.bottomColor}`}
+                >
+                  {/* Backdrop Faded Number */}
+                  <span className="absolute top-2 right-4 font-display font-extrabold text-3xl text-muted/15 select-none pointer-events-none group-hover:text-muted/25 transition-all">
                     {step.number}
                   </span>
+
+                  {/* Icon Circle */}
+                  <div className="w-10 h-10 rounded-xl bg-card2 border border-border/40 flex items-center justify-center text-lg shadow-sm">
+                    {step.emoji}
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="font-display font-bold text-base text-white mt-5 group-hover:text-cyan transition-colors duration-200">
+                    {step.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-[11px] md:text-xs text-muted mt-2 leading-relaxed max-w-[170px]">
+                    {step.description}
+                  </p>
                 </div>
 
-                {/* Title */}
-                <h3 className="font-display font-semibold text-lg text-white mt-6 group-hover:text-cyan transition-colors duration-200">
-                  {step.title}
-                </h3>
-
-                {/* Description */}
-                <p className="font-body text-sm text-muted mt-2 max-w-[180px] leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
+                {/* Chevron connector (visible on desktop only, between items) */}
+                {idx < steps.length - 1 && (
+                  <div className="hidden lg:flex items-center justify-center text-muted/65 select-none shrink-0 z-10 w-6 h-6 rounded-full bg-card border border-border/60">
+                    <ChevronRight size={14} className="text-muted/80 animate-pulse" />
+                  </div>
+                )}
+              </React.Fragment>
             ))}
           </div>
         </div>
