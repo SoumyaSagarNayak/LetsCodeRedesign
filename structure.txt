@@ -1,0 +1,33 @@
+========================================================================
+LET'S CODE LANDING PAGE REDESIGN - DIRECTORY STRUCTURE
+========================================================================
+
+letscoderedesign/
+│
+├── public/                     # Static assets (favicons, etc.)
+│
+├── src/                        # React frontend source files
+│   ├── components/             # Reusable UI sections
+│   │   ├── AIToolsGrid.jsx     # 8 AI placement tools grid section
+│   │   ├── CompanyPrep.jsx     # Company-specific study channels
+│   │   ├── CTABanner.jsx       # Closing Call-to-Action section
+│   │   ├── Communities.jsx     # Thematic Discord community boards
+│   │   ├── Footer.jsx          # Bottom columns and brand SVG links
+│   │   ├── Hero.jsx            # Pulser badges, headings, and typed bash console
+│   │   ├── JobFinderPreview.jsx# Real-time job matching visual stacks
+│   │   ├── JourneySteps.jsx    # "Student to Employed" 5-step roadmap milestones
+│   │   ├── Navbar.jsx          # Glassmorphic top navigation + mobile drawer
+│   │   └── Resources.jsx       # Study sheet category card links
+│   │
+│   ├── App.jsx                 # Layout orchestrator and IntersectionObserver logic
+│   ├── index.css               # Tailwind v3 directives, animations, and keyframes
+│   └── main.jsx                # App bootstrap/root creation
+│
+├── index.html                  # Main HTML entry (SEO metadata & Google Web Fonts)
+├── package.json                # Project dependencies (React 18, Tailwind, Lucide React)
+├── postcss.config.cjs          # PostCSS pre-processor configuration
+├── tailwind.config.cjs         # Tailwind custom color palettes, displays, and patterns
+├── vite.config.js              # Vite React bundler settings
+├── README.md                   # Redesign documentation and instructions
+├── structure.txt               # [THIS FILE] Visual layout of the workspace
+└── user_guide.txt              # Setup guidelines, run instructions, and troubleshooting

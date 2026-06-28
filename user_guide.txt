@@ -1,0 +1,82 @@
+========================================================================
+LET'S CODE LANDING PAGE REDESIGN - USER RUN & OPERATIONS GUIDE
+========================================================================
+
+Welcome to the Let's Code Landing Page Redesign. This is a frontend-only
+React 18 + Vite + Tailwind CSS v3 project running on localhost.
+
+Follow the instructions below to set up, run, and modify this project.
+
+------------------------------------------------------------------------
+1. PREREQUISITES
+------------------------------------------------------------------------
+Make sure you have Node.js and npm installed on your machine.
+- Node.js: v18.x or later (recommended)
+- npm: v9.x or later
+
+Verify installations by running:
+  node -v
+  npm -v
+
+------------------------------------------------------------------------
+2. INSTALLATION
+------------------------------------------------------------------------
+If you are starting clean or cloning this workspace elsewhere:
+1. Navigate to the project root:
+   cd letscoderedesign
+2. Install all dependencies:
+   npm install
+
+This will download:
+- React & React DOM (v18.x)
+- Vite (v8.x Dev server & bundler)
+- Tailwind CSS v3 & PostCSS 8 (CSS processing)
+- Lucide React (standard UI icons)
+
+------------------------------------------------------------------------
+3. RUNNING THE DEVELOPMENT SERVER
+------------------------------------------------------------------------
+To start the local development server:
+   npm run dev
+
+Once started, Vite will output:
+   ➜  Local:   http://localhost:5173/
+
+Open your browser and navigate to http://localhost:5173/ to view the landing
+page with hot-reload enabled. Any changes in source files will update the
+web browser instantly.
+
+------------------------------------------------------------------------
+4. BUILDING FOR PRODUCTION
+------------------------------------------------------------------------
+To compile a minimized, production-ready bundle:
+   npm run build
+
+This will trigger Vite to bundle assets and place them in the 'dist/' folder:
+- dist/index.html   (main HTML entry point)
+- dist/assets/      (minimized and cached JS & CSS assets)
+
+To preview the built production app locally, run:
+   npm run preview
+
+------------------------------------------------------------------------
+5. QUALITY CHECKLIST & BEHAVIOR
+------------------------------------------------------------------------
+- Fixed Navbar: Always visible at the top, includes scroll blur effects.
+- Hamburger Navigation: Clicking on mobile expands the drawer dropdown.
+- Bash Command Typing: Cycles through student placement scores continuously.
+- Scroll Reveal: Cards fade in and translate slightly upward as you scroll.
+- Hover Micro-interactions: Cards lift by -4px and illuminate borders.
+
+------------------------------------------------------------------------
+6. TROUBLESHOOTING & COMMON BUGS
+------------------------------------------------------------------------
+Q: Brand icons (YouTube, LinkedIn) fail to load or error in Lucide React?
+A: In newer versions of Lucide React, brand-related icons were removed.
+   This project resolves this by using inline SVGs directly inside Footer.jsx.
+   Do not import brand icons from 'lucide-react' directly.
+
+Q: Port 5173 is already in use?
+A: Vite will automatically attempt to bind to the next available port
+   (e.g., 5174). You can also run the dev server on a specific port:
+   npx vite --port 3000
