@@ -3,19 +3,19 @@ import { ChevronRight, ArrowRight } from 'lucide-react';
 
 export default function CompanyPrep() {
   const companies = [
-    { name: 'Google', color: '#4285F4', initial: 'G', borderClass: 'border-[#4285F4]/30 hover:border-[#4285F4]' },
-    { name: 'Amazon', color: '#FF9900', initial: 'a', borderClass: 'border-[#FF9900]/30 hover:border-[#FF9900]' },
-    { name: 'Microsoft', color: '#00A4EF', initial: 'M', borderClass: 'border-[#00A4EF]/30 hover:border-[#00A4EF]' },
-    { name: 'Goldman Sachs', color: '#0053D6', initial: 'GS', borderClass: 'border-[#0053D6]/30 hover:border-[#0053D6]' },
-    { name: 'TCS', color: '#7C3AED', initial: 'T', borderClass: 'border-[#7C3AED]/30 hover:border-[#7C3AED]' },
-    { name: 'Infosys', color: '#007CC3', initial: 'i', borderClass: 'border-[#007CC3]/30 hover:border-[#007CC3]' },
-    { name: 'Wipro', color: '#9B59B6', initial: 'W', borderClass: 'border-[#9B59B6]/30 hover:border-[#9B59B6]' },
-    { name: 'Deloitte', color: '#86BC25', initial: 'D', borderClass: 'border-[#86BC25]/30 hover:border-[#86BC25]' },
-    { name: 'JP Morgan', color: '#003087', initial: 'JP', borderClass: 'border-[#003087]/30 hover:border-[#003087]' },
-    { name: 'Flipkart', color: '#FC6D26', initial: 'F', borderClass: 'border-[#FC6D26]/30 hover:border-[#FC6D26]' },
-    { name: 'Razorpay', color: '#00B140', initial: 'R', borderClass: 'border-[#00B140]/30 hover:border-[#00B140]' },
-    { name: 'Swiggy', color: '#EB4C60', initial: 'S', borderClass: 'border-[#EB4C60]/30 hover:border-[#EB4C60]' },
-    { name: 'Uber', color: '#F0F4FF', initial: 'U', borderClass: 'border-[#F0F4FF]/20 hover:border-[#F0F4FF]' },
+    { name: 'Google', color: '#4285F4', initial: 'G', borderClass: 'border-[#4285F4]/30 hover:border-[#4285F4]', href: 'https://www.lets-code.co.in/prepare/google/' },
+    { name: 'Amazon', color: '#FF9900', initial: 'a', borderClass: 'border-[#FF9900]/30 hover:border-[#FF9900]', href: 'https://www.lets-code.co.in/prepare/amazon/' },
+    { name: 'Microsoft', color: '#00A4EF', initial: 'M', borderClass: 'border-[#00A4EF]/30 hover:border-[#00A4EF]', href: 'https://www.lets-code.co.in/prepare/microsoft/' },
+    { name: 'Goldman Sachs', color: '#0053D6', initial: 'GS', borderClass: 'border-[#0053D6]/30 hover:border-[#0053D6]', href: 'https://www.lets-code.co.in/prepare/goldman-sachs/' },
+    { name: 'TCS', color: '#7C3AED', initial: 'T', borderClass: 'border-[#7C3AED]/30 hover:border-[#7C3AED]', href: 'https://www.lets-code.co.in/prepare/tcs/' },
+    { name: 'Infosys', color: '#007CC3', initial: 'i', borderClass: 'border-[#007CC3]/30 hover:border-[#007CC3]', href: 'https://www.lets-code.co.in/prepare/infosys/' },
+    { name: 'Wipro', color: '#9B59B6', initial: 'W', borderClass: 'border-[#9B59B6]/30 hover:border-[#9B59B6]', href: 'https://www.lets-code.co.in/prepare/wipro/' },
+    { name: 'Deloitte', color: '#86BC25', initial: 'D', borderClass: 'border-[#86BC25]/30 hover:border-[#86BC25]', href: 'https://www.lets-code.co.in/prepare/deloitte/' },
+    { name: 'JP Morgan', color: '#003087', initial: 'JP', borderClass: 'border-[#003087]/30 hover:border-[#003087]', href: 'https://www.lets-code.co.in/prepare/jp-morgan/' },
+    { name: 'Flipkart', color: '#FC6D26', initial: 'F', borderClass: 'border-[#FC6D26]/30 hover:border-[#FC6D26]', href: 'https://www.lets-code.co.in/prepare/flipkart/' },
+    { name: 'Razorpay', color: '#00B140', initial: 'R', borderClass: 'border-[#00B140]/30 hover:border-[#00B140]', href: 'https://www.lets-code.co.in/prepare/' },
+    { name: 'Swiggy', color: '#EB4C60', initial: 'S', borderClass: 'border-[#EB4C60]/30 hover:border-[#EB4C60]', href: 'https://www.lets-code.co.in/prepare/' },
+    { name: 'Uber', color: '#F0F4FF', initial: 'U', borderClass: 'border-[#F0F4FF]/20 hover:border-[#F0F4FF]', href: 'https://www.lets-code.co.in/prepare/' },
   ];
 
   const resumeTemplates = [
@@ -48,9 +48,12 @@ export default function CompanyPrep() {
         {/* Chips Container */}
         <div className="flex flex-wrap justify-center gap-3.5 max-w-4xl font-body mb-24">
           {companies.map((company) => (
-            <div
+            <a
               key={company.name}
-              className={`reveal flex items-center justify-between gap-3 bg-card px-[18px] py-2.5 rounded-xl cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.15)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(124,58,237,0.15)] border ${company.borderClass} group`}
+              href={company.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`reveal flex items-center justify-between gap-3 bg-card px-[18px] py-2.5 rounded-xl cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.15)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(124,58,237,0.15)] border ${company.borderClass} group no-underline`}
             >
               {/* Colored Initials Icon */}
               <div
@@ -63,16 +66,21 @@ export default function CompanyPrep() {
                 {company.name}
               </span>
               <ChevronRight size={14} className="text-muted group-hover:text-white transition-colors duration-200" />
-            </div>
+            </a>
           ))}
 
           {/* View All Chip */}
-          <div className="reveal flex items-center gap-2 bg-[#7C3AED]/10 hover:bg-[#7C3AED]/20 border border-[#7C3AED]/40 hover:border-violet2 px-[18px] py-2.5 rounded-xl cursor-pointer transition-all duration-200 hover:-translate-y-0.5 group">
+          <a 
+            href="https://www.lets-code.co.in/prepare/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="reveal flex items-center gap-2 bg-[#7C3AED]/10 hover:bg-[#7C3AED]/20 border border-[#7C3AED]/40 hover:border-violet2 px-[18px] py-2.5 rounded-xl cursor-pointer transition-all duration-200 hover:-translate-y-0.5 group no-underline"
+          >
             <span className="text-sm font-bold text-violet2 group-hover:text-white transition-colors duration-200">
               View All 25+ Company Guides
             </span>
             <ChevronRight size={14} className="text-violet2 group-hover:text-white transition-colors duration-200" />
-          </div>
+          </a>
         </div>
 
         {/* Build an ATS-Ready Resume in Minutes Section */}
@@ -104,10 +112,15 @@ export default function CompanyPrep() {
               ))}
             </div>
 
-            <button className="bg-gradient-to-r from-violet to-violet2 hover:from-violet2 hover:to-violet text-white px-7 py-3.5 rounded-xl font-bold text-base shadow-[0_0_20px_rgba(124,58,237,0.35)] transition-all duration-200 flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-cyan">
+            <a 
+              href="https://www.lets-code.co.in/dashboard/optimizeresume/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gradient-to-r from-violet to-violet2 hover:from-violet2 hover:to-violet text-white px-7 py-3.5 rounded-xl font-bold text-base shadow-[0_0_20px_rgba(124,58,237,0.35)] transition-all duration-200 flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-cyan no-underline"
+            >
               <span>Create Resume Now</span>
               <ArrowRight size={18} />
-            </button>
+            </a>
           </div>
 
           {/* Right Column: Visual Layout of the 6 templates */}

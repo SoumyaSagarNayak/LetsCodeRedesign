@@ -70,18 +70,26 @@ export default function JobFinderPreview() {
             ))}
           </ul>
 
-          <button className="bg-gradient-to-r from-violet to-violet2 hover:from-violet2 hover:to-violet text-white px-7 py-3.5 rounded-xl font-bold text-base shadow-[0_0_20px_rgba(124,58,237,0.35)] transition-all duration-200 flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-cyan">
+          <a 
+            href="https://www.lets-code.co.in/dashboard/job-finder/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gradient-to-r from-violet to-violet2 hover:from-violet2 hover:to-violet text-white px-7 py-3.5 rounded-xl font-bold text-base shadow-[0_0_20px_rgba(124,58,237,0.35)] transition-all duration-200 flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-cyan no-underline"
+          >
             <span>Find Matching Jobs</span>
             <ArrowRight size={18} />
-          </button>
+          </a>
         </div>
 
         {/* Right Side: Visual Stack */}
         <div className="reveal flex flex-col gap-4 w-full max-w-md mx-auto font-body">
           {previewJobs.map((job) => (
-            <div
+            <a
               key={job.id}
-              className="bg-card border border-border/80 rounded-xl p-4 flex items-center justify-between gap-4 hover:border-violet/60 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(124,58,237,0.15)] group"
+              href="https://www.lets-code.co.in/jobs/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-card border border-border/80 rounded-xl p-4 flex items-center justify-between gap-4 hover:border-violet/60 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(124,58,237,0.15)] group no-underline"
             >
               <div className="flex items-center gap-4">
                 {/* Logo */}
@@ -106,7 +114,7 @@ export default function JobFinderPreview() {
               <div className={`px-2.5 py-1 text-xs font-bold rounded-lg border uppercase tracking-wider shrink-0 ${job.matchColor}`}>
                 {job.match} Fit
               </div>
-            </div>
+            </a>
           ))}
 
           {/* Under Note */}

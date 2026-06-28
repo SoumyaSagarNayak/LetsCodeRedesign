@@ -6,54 +6,54 @@ export default function Resources() {
       title: 'Roadmaps',
       emoji: '🗺️',
       links: [
-        { label: 'DSA Roadmap', href: '#dsa' },
-        { label: 'System Design Roadmap', href: '#system-design' },
-        { label: 'DevOps Roadmap', href: '#devops' },
+        { label: 'DSA Roadmap', href: 'https://www.lets-code.co.in/articles/roadmap/' },
+        { label: 'System Design Roadmap', href: 'https://www.lets-code.co.in/articles/roadmap/' },
+        { label: 'DevOps Roadmap', href: 'https://www.lets-code.co.in/articles/roadmap/' },
       ],
     },
     {
       title: 'Interview Questions',
       emoji: '💬',
       links: [
-        { label: 'JavaScript Questions', href: '#javascript' },
-        { label: 'OOPs Concepts', href: '#oops' },
-        { label: 'DBMS & SQL Questions', href: '#dbms' },
+        { label: 'JavaScript Questions', href: 'https://www.lets-code.co.in/explore/' },
+        { label: 'OOPs Concepts', href: 'https://www.lets-code.co.in/explore/' },
+        { label: 'DBMS & SQL Questions', href: 'https://www.lets-code.co.in/explore/' },
       ],
     },
     {
       title: 'Company PYQs',
       emoji: '📋',
       links: [
-        { label: 'Google PYQs', href: '#google-pyqs' },
-        { label: 'Amazon PYQs', href: '#amazon-pyqs' },
-        { label: 'TCS NQT PYQs', href: '#tcs-pyqs' },
+        { label: 'Google PYQs', href: 'https://www.lets-code.co.in/previousyearcodingquestion/google-previous-year-coding-questions/' },
+        { label: 'Amazon PYQs', href: 'https://www.lets-code.co.in/prepare/amazon/' },
+        { label: 'TCS NQT PYQs', href: 'https://www.lets-code.co.in/previousyearcodingquestion/tcspyq/' },
       ],
     },
     {
       title: '100 Days DSA',
       emoji: '🏆',
       links: [
-        { label: 'Register for Challenge', href: '#dsa-register' },
-        { label: 'View Daily Challenges', href: '#dsa-challenges' },
-        { label: 'DSA Leaderboard', href: '#dsa-leaderboard' },
+        { label: 'Register for Challenge', href: 'https://www.lets-code.co.in/dashboard/' },
+        { label: 'View Daily Challenges', href: 'https://www.lets-code.co.in/dashboard/' },
+        { label: 'DSA Leaderboard', href: 'https://www.lets-code.co.in/contests/' },
       ],
     },
     {
       title: 'Interview Experiences',
       emoji: '📖',
       links: [
-        { label: 'Read Experiences', href: '#read-exp' },
-        { label: 'Share Your Experience', href: '#share-exp' },
-        { label: 'Salary Insights', href: '#salaries' },
+        { label: 'Read Experiences', href: 'https://www.lets-code.co.in/interview-experience/' },
+        { label: 'Share Your Experience', href: 'https://www.lets-code.co.in/interview-experience/' },
+        { label: 'Salary Insights', href: 'https://docs.google.com/document/d/145uqZ3cyKJKAuAsbGSbXfWwWokaUhz_zHACpaDYmdlA/edit?usp=sharing' },
       ],
     },
     {
       title: 'Placement Kit',
       emoji: '🎒',
       links: [
-        { label: 'Resume Templates', href: '#resumes' },
-        { label: 'Cold Email Templates', href: '#cold-emails' },
-        { label: 'Final Year Project Ideas', href: '#fyp-ideas' },
+        { label: 'Resume Templates', href: 'https://www.lets-code.co.in/dashboard/optimizeresume/' },
+        { label: 'Cold Email Templates', href: 'https://docs.google.com/document/d/145uqZ3cyKJKAuAsbGSbXfWwWokaUhz_zHACpaDYmdlA/edit?usp=sharing' },
+        { label: 'Final Year Project Ideas', href: 'https://www.lets-code.co.in/blogs/' },
       ],
     },
   ];
@@ -97,6 +97,8 @@ export default function Resources() {
                   <li key={link.label}>
                     <a
                       href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="group/link flex items-center gap-2 text-sm font-semibold text-violet2 hover:text-cyan transition-colors duration-200"
                     >
                       <span className="transition-transform duration-200 group-hover/link:translate-x-1.5 shrink-0 text-base">

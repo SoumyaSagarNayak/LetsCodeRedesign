@@ -9,6 +9,7 @@ export default function JourneySteps() {
       title: 'Learn',
       description: 'DSA roadmaps, system design, DevOps & ML guides',
       bottomColor: 'border-[#00E5FF]',
+      href: 'https://www.lets-code.co.in/articles/roadmap/',
     },
     {
       number: '02',
@@ -16,6 +17,7 @@ export default function JourneySteps() {
       title: 'Practice',
       description: 'Mock interviews, company PYQs & DSA challenges',
       bottomColor: 'border-[#9D5CFF]',
+      href: 'https://www.lets-code.co.in/dashboard/mocktest/',
     },
     {
       number: '03',
@@ -23,6 +25,7 @@ export default function JourneySteps() {
       title: 'Optimize',
       description: 'AI tools for resume, LinkedIn & job ready score',
       bottomColor: 'border-[#F59E0B]',
+      href: 'https://www.lets-code.co.in/dashboard/',
     },
     {
       number: '04',
@@ -30,6 +33,7 @@ export default function JourneySteps() {
       title: 'Connect',
       description: '16+ tech & city communities on Discord',
       bottomColor: 'border-[#10B981]',
+      href: 'https://discord.gg/XRBheB9QF9',
     },
     {
       number: '05',
@@ -37,6 +41,7 @@ export default function JourneySteps() {
       title: 'Get Hired',
       description: 'Job alerts, startup opps & interview experiences',
       bottomColor: 'border-[#E1306C]',
+      href: 'https://www.lets-code.co.in/jobs/',
     },
   ];
 
@@ -66,7 +71,10 @@ export default function JourneySteps() {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 w-full font-body">
             {steps.map((step, idx) => (
               <React.Fragment key={step.title}>
-                <div 
+                <a 
+                  href={step.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`reveal relative flex-1 w-full lg:max-w-[200px] min-h-[170px] bg-card hover:bg-card2 border border-border/80 hover:border-violet/60 rounded-xl p-5 flex flex-col items-start text-left group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(124,58,237,0.15)] overflow-hidden border-b-4 ${step.bottomColor}`}
                 >
                   {/* Backdrop Faded Number */}
@@ -88,7 +96,7 @@ export default function JourneySteps() {
                   <p className="text-[11px] md:text-xs text-muted mt-2 leading-relaxed max-w-[170px]">
                     {step.description}
                   </p>
-                </div>
+                </a>
 
                 {/* Chevron connector (visible on desktop only, between items) */}
                 {idx < steps.length - 1 && (

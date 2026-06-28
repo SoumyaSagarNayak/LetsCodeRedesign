@@ -17,6 +17,7 @@ export default function AIToolsGrid() {
       stat: '100 pt score',
       actionText: 'Check Score',
       colSpan: 'md:col-span-2',
+      href: 'https://www.lets-code.co.in/dashboard/job-ready-score/',
     },
     {
       id: 2,
@@ -32,6 +33,7 @@ export default function AIToolsGrid() {
       stat: '35+ topics',
       actionText: 'Start Test',
       colSpan: 'col-span-1',
+      href: 'https://www.lets-code.co.in/dashboard/mocktest/',
     },
     {
       id: 3,
@@ -47,6 +49,7 @@ export default function AIToolsGrid() {
       stat: '95% ATS pass rate',
       actionText: 'Analyse Resume',
       colSpan: 'col-span-1',
+      href: 'https://www.lets-code.co.in/dashboard/optimizeresume/',
     },
     {
       id: 4,
@@ -62,6 +65,7 @@ export default function AIToolsGrid() {
       stat: '3.5x more views',
       actionText: 'Optimize Profile',
       colSpan: 'col-span-1',
+      href: 'https://www.lets-code.co.in/dashboard/optimiselinkedin/',
     },
     {
       id: 5,
@@ -77,6 +81,7 @@ export default function AIToolsGrid() {
       stat: 'Should I Apply? Engine',
       actionText: 'Find Jobs',
       colSpan: 'col-span-1',
+      href: 'https://www.lets-code.co.in/dashboard/job-finder/',
     },
     {
       id: 6,
@@ -92,6 +97,7 @@ export default function AIToolsGrid() {
       stat: '8–10 keywords',
       actionText: 'Generate Now',
       colSpan: 'col-span-1',
+      href: 'https://www.lets-code.co.in/dashboard/cover-letter/',
     },
     {
       id: 7,
@@ -107,6 +113,7 @@ export default function AIToolsGrid() {
       stat: 'Kanban + List view',
       actionText: 'Track Applications',
       colSpan: 'col-span-1',
+      href: 'https://www.lets-code.co.in/dashboard/tracker/',
     },
     {
       id: 8,
@@ -122,6 +129,7 @@ export default function AIToolsGrid() {
       stat: '100 pt score',
       actionText: 'Analyze Profile',
       colSpan: 'col-span-1',
+      href: 'https://www.lets-code.co.in/dashboard/github-optimizer/',
     },
   ];
 
@@ -178,20 +186,30 @@ export default function AIToolsGrid() {
                 <span className="font-mono text-[11px] text-cyan2 font-medium tracking-tight">
                   {tool.stat}
                 </span>
-                <button className={`flex items-center gap-1 text-[11px] font-bold transition-colors duration-200 uppercase tracking-wider ${tool.textColor}`}>
+                <a
+                  href={tool.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center gap-1 text-[11px] font-bold transition-colors duration-200 uppercase tracking-wider ${tool.textColor}`}
+                >
                   <span>{tool.actionText}</span>
                   <ArrowUpRight size={14} className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </button>
+                </a>
               </div>
             </div>
           ))}
         </div>
 
         {/* View All Button */}
-        <button className="bg-gradient-to-r from-cyan/80 to-cyan2/80 hover:from-cyan hover:to-cyan2 text-navy px-8 py-3.5 rounded-xl font-bold text-base shadow-[0_0_20px_rgba(0,229,255,0.25)] hover:shadow-[0_0_30px_rgba(0,229,255,0.5)] transition-all duration-200 flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-violet">
+        <a
+          href="https://www.lets-code.co.in/dashboard/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-gradient-to-r from-cyan/80 to-cyan2/80 hover:from-cyan hover:to-cyan2 text-navy px-8 py-3.5 rounded-xl font-bold text-base shadow-[0_0_20px_rgba(0,229,255,0.25)] hover:shadow-[0_0_30px_rgba(0,229,255,0.5)] transition-all duration-200 flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-violet"
+        >
           <span>Open Full AI Toolkit</span>
           <ArrowRight size={18} />
-        </button>
+        </a>
       </div>
     </section>
   );
