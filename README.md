@@ -8,43 +8,37 @@ This repository contains a high-fidelity frontend redesign of [Let's Code](https
 
 The goal of this project is to take the core content of the original website and wrap it in a premium, responsive, developer-centric interface. Key visual enhancements include:
 
-* **Curated Dark-Mode Theme**: Deep background tones (`#0A0F1E`, `#0F172A`) coupled with glowing accents (Violet `#7C3AED` and Neon Cyan `#00E5FF`) for an immersive experience.
-* **Modern Typography**:
-  * Display Headings → **Space Grotesk** (Bold, tracking-tight)
-  * Body Text → **Inter** (Sleek, highly readable)
-  * Terminal/Code Blocks → **JetBrains Mono**
-* **Rich Visual Elements**:
-  * Glassmorphism navigation bar with backdrop blur filters.
-  * Radial gradient violet/cyan glow blobs and structural mesh grids.
-  * Subtle card borders (`rgba(124,58,237,0.18)`) that transition on hover.
+* **Austere Monochrome Canvas**: Pure black background (`#000000`), flat cards (`#141414`), and detail panels (`#0d0d0d`) bounded by quiet 1px hairline dividers (`#262626`). There are no glowing gradients, drop shadows, or decorative elements. The desaturated ice-blue (`#c3d9f3`) is the single accent color reserved exclusively for text links.
+* **The Triple Font Trinity**:
+  * **Saira Condensed**: Uppercase display headings (H1, H2, H3) with wide tracking (2.5px to 6px) to convey engineered structure.
+  * **Cormorant Garamond**: A literary, slow-reading serif face used for all running body paragraphs, quotes, and descriptions.
+  * **JetBrains Mono**: A precision monospace face used for button text, navigation items, metrics, and dates.
+* **Aesthetic Geometry Rules**: Corner rounding is set to `0px` (`rounded-none`) across all cards, containers, inputs, and visual elements. Corner rounding is set to `rounded-full` **exclusively for buttons**.
 * **Responsive Layouts**: Completely built for viewports from 375px (mobile) through 768px (tablets), 1280px (laptops), and 1440px (desktop monitors).
-* **Zero Cumulative Layout Shift (CLS)**: Optimized loading grids and flex chips.
 
 ---
 
 ## 🌟 Section-by-Section Architecture
 
-The landing page features a modular structure divided into 11 responsive sections:
+The landing page features a modular structure divided into 12 responsive sections:
 
-1. **Navbar** ([Navbar.jsx](file:///d:/projects/letscoderedesign/src/components/Navbar.jsx)): Glassmorphic header with active links, desktop login/join buttons, and a responsive slide-down mobile hamburger navigation menu.
-2. **Hero Section** ([Hero.jsx](file:///d:/projects/letscoderedesign/src/components/Hero.jsx)): Combines a pulsing credential badge ("Always Free"), bold responsive headings, a bash command terminal showing success loops, and a placement stats console.
-3. **Placement Roadmap** ([JourneySteps.jsx](file:///d:/projects/letscoderedesign/src/components/JourneySteps.jsx)): Outlines the student-to-employed workflow in 5 visual milestones, connected by a gradient line vector on desktop.
-4. **AI Career Tools Grid** ([AIToolsGrid.jsx](file:///d:/projects/letscoderedesign/src/components/AIToolsGrid.jsx)): Showcases 8 placement utilities (Resume ATS check, LinkedIn boost, mock MCQ rooms) with colored top border bars appearing on hover.
-5. **Company Prep Chips** ([CompanyPrep.jsx](file:///d:/projects/letscoderedesign/src/components/CompanyPrep.jsx)): Flex-wrapped tiles for 14 major firms (Google, Amazon, Microsoft, TCS, etc.) displaying initials inside brand-colored squares.
-6. **AI Job Finder Preview** ([JobFinderPreview.jsx](file:///d:/projects/letscoderedesign/src/components/JobFinderPreview.jsx)): Features checklist bullet points alongside a visual pile of job alerts showing match fit score tags (green, amber, and violet).
-7. **Study Material Resources** ([Resources.jsx](file:///d:/projects/letscoderedesign/src/components/Resources.jsx)): A 3-column matrix of placement kits, roadmaps, and cheat sheets featuring links that transition into cyan and slide on hover.
-8. **Student Testimonials** ([Testimonials.jsx](file:///d:/projects/letscoderedesign/src/components/Testimonials.jsx)): Highlight boxes for successful engineering students from colleges across India.
-9. **Tech Discord Communities** ([Communities.jsx](file:///d:/projects/letscoderedesign/src/components/Communities.jsx)): 8 thematic channel cards indicating total member tallies and direct action pathways.
-10. **Call-To-Action Banner** ([CTABanner.jsx](file:///d:/projects/letscoderedesign/src/components/CTABanner.jsx)): Centered high-conversion closure panel with background blobs.
-11. **Site Footer** ([Footer.jsx](file:///d:/projects/letscoderedesign/src/components/Footer.jsx)): 4-column directory index with custom inline SVG links for LinkedIn, YouTube, and Instagram.
-
----
-
-## ⚡ Interactions & Performance Features
-
-- **Continuous Bash Typing Loop**: Built using custom React hooks to simulate typing, backspacing, and cursor blinking for 4 student success logs at set intervals.
-- **Scroll Reveal Animations**: Built with a single instance of `IntersectionObserver` in [App.jsx](file:///d:/projects/letscoderedesign/src/App.jsx) to fade and lift content boxes only when they reach 8% visibility, keeping the page clean on initial load.
-- **Brand SVG Fallbacks**: Utilizes lightweight, inline vector paths for brand logos in the footer and company preparation modules to bypass package limitations.
+1. **Navbar** ([Navbar.jsx](file:///d:/projects/letscoderedesign/src/components/Navbar.jsx)): Transparent header over solid black with a bottom hairline divider. Spaced uppercase wordmark (`LET'S CODE`), monospace links, and outline buttons (`rounded-full`).
+2. **Hero Section** ([Hero.jsx](file:///d:/projects/letscoderedesign/src/components/Hero.jsx)): Split layout featuring uppercase Display titles and an interactive **System Configurator** that updates spec sheet details and metrics on a mock catalog card in real-time.
+3. **The Placement Pipeline** ([JourneySteps.jsx](file:///d:/projects/letscoderedesign/src/components/JourneySteps.jsx)): Refactors standard roadmap cards into a vertical timeline spec table with large display stage numbers (`01`-`05`).
+4. **Interactive Bento Grid** ([AIToolsGrid.jsx](file:///d:/projects/letscoderedesign/src/components/AIToolsGrid.jsx)): Features custom micro-widgets for hands-on interaction:
+   * **Job Ready Score Simulator**: Counts up on audit trigger and prints completed checklists.
+   * **Mock Interview Chip Questions**: Click topics (DSA, React, DBMS) to load coding questions.
+   * **AI Job Finder Scanner**: Search input that returns matched position listings.
+   * **GitHub Profile Auditor**: Simulates username reviews via console log streams.
+   * **Kanban board**: Interactive tracker lanes.
+5. **Company Prep Spec Dashboard** ([CompanyPrep.jsx](file:///d:/projects/letscoderedesign/src/components/CompanyPrep.jsx)): Dual-panel layout where selecting a target company updates its average packages, interview rounds, and sample assessment question.
+6. **Resume Style Customizer** ([CompanyPrep.jsx](file:///d:/projects/letscoderedesign/src/components/CompanyPrep.jsx)): Live visual mock resume sheet that changes layout margins, alignments, and lines count based on template selection.
+7. **AI Job Finder Preview** ([JobFinderPreview.jsx](file:///d:/projects/letscoderedesign/src/components/JobFinderPreview.jsx)): Real-time job cards styling with match fit score tags.
+8. **Study Material Resources** ([Resources.jsx](file:///d:/projects/letscoderedesign/src/components/Resources.jsx)): A clean index of study guides, roadmaps, and cheat sheets in serif format with desaturated ice-blue hover actions.
+9. **Testimonials Magazine Slider** ([Testimonials.jsx](file:///d:/projects/letscoderedesign/src/components/Testimonials.jsx)): Slide deck layout displaying a single massive quote in Cormorant Garamond serif with slide indicators (`01 / 03`).
+10. **Tech Communities** ([Communities.jsx](file:///d:/projects/letscoderedesign/src/components/Communities.jsx)): Thematic Discord channels indicating total member counts.
+11. **Call-To-Action Banner** ([CTABanner.jsx](file:///d:/projects/letscoderedesign/src/components/CTABanner.jsx)): Minimal pre-footer centered band with outline CTAs.
+12. **Site Footer** ([Footer.jsx](file:///d:/projects/letscoderedesign/src/components/Footer.jsx)): Spaced directories and a large faded brand logo at the bottom center.
 
 ---
 
@@ -61,6 +55,7 @@ The landing page features a modular structure divided into 11 responsive section
 
 - **Workspace File Structure**: [structure.txt](file:///d:/projects/letscoderedesign/structure.txt)
 - **Deployment, Running, & Troubleshooting Guide**: [user_guide.txt](file:///d:/projects/letscoderedesign/user_guide.txt)
+- **Design System Token Specs**: [design.md](file:///d:/projects/letscoderedesign/design.md)
 
 ---
 

@@ -4,25 +4,26 @@ LET'S CODE LANDING PAGE REDESIGN - DIRECTORY STRUCTURE
 
 letscoderedesign/
 │
-├── public/                     # Static assets (favicons, etc.)
+├── public/                     # Static assets (favicons, WebP logo, etc.)
 │
 ├── src/                        # React frontend source files
 │   ├── components/             # Reusable UI sections
-│   │   ├── AIToolsGrid.jsx     # 8 AI placement tools grid section
-│   │   ├── CompanyPrep.jsx     # Company-specific study channels
+│   │   ├── AIToolsGrid.jsx     # Interactive bento grid widgets
+│   │   ├── CompanyPrep.jsx     # Company spec sheet list & resume template styler
 │   │   ├── CTABanner.jsx       # Closing Call-to-Action section
-│   │   ├── Communities.jsx     # Thematic Discord community boards
-│   │   ├── Footer.jsx          # Bottom columns and brand SVG links
-│   │   ├── Hero.jsx            # Pulser badges, headings, and typed bash console
-│   │   ├── JobFinderPreview.jsx# Real-time job matching visual stacks
-│   │   ├── JourneySteps.jsx    # "Student to Employed" 5-step roadmap milestones
-│   │   ├── Navbar.jsx          # Glassmorphic top navigation + mobile drawer
-│   │   └── Resources.jsx       # Study sheet category card links
+│   │   ├── Communities.jsx     # Discord community links
+│   │   ├── Footer.jsx          # Bottom directory links & brand SVGs
+│   │   ├── Hero.jsx            # Configurator panel & typed logs terminal
+│   │   ├── JobFinderPreview.jsx# Real-time job matching previews
+│   │   ├── JourneySteps.jsx    # Vertical timeline roadmap spec table
+│   │   ├── LoginModal.jsx      # Flat outline dummy authorization modal
+│   │   └── Resources.jsx       # Study sheet category links
 │   │
 │   ├── App.jsx                 # Layout orchestrator and IntersectionObserver logic
-│   ├── index.css               # Tailwind v3 directives, animations, and keyframes
+│   ├── index.css               # Tailwind directives and custom scrollbar overrides
 │   └── main.jsx                # App bootstrap/root creation
 │
+├── design.md                   # Brand token definitions and design rules (Bugatti theme)
 ├── index.html                  # Main HTML entry (SEO metadata & Google Web Fonts)
 ├── package.json                # Project dependencies (React 18, Tailwind, Lucide React)
 ├── postcss.config.cjs          # PostCSS pre-processor configuration

@@ -35,12 +35,12 @@ This will download:
 
 ------------------------------------------------------------------------
 3. RUNNING THE DEVELOPMENT SERVER
-------------------------------------------------------------------------
+========================================================================
 To start the local development server:
    npm run dev
 
 Once started, Vite will output:
-   ➜  Local:   http://localhost:5173/
+   Local:   http://localhost:5173/
 
 Open your browser and navigate to http://localhost:5173/ to view the landing
 page with hot-reload enabled. Any changes in source files will update the
@@ -62,18 +62,20 @@ To preview the built production app locally, run:
 ------------------------------------------------------------------------
 5. QUALITY CHECKLIST & BEHAVIOR
 ------------------------------------------------------------------------
-- Fixed Navbar: Always visible at the top, includes scroll blur effects.
-- Hamburger Navigation: Clicking on mobile expands the drawer dropdown.
-- Bash Command Typing: Cycles through student placement scores continuously.
-- Scroll Reveal: Cards fade in and translate slightly upward as you scroll.
-- Hover Micro-interactions: Cards lift by -4px and illuminate borders.
+- Fixed Navbar: Always visible at the top, solid black, carries spaced display wordmarks and outline pill buttons.
+- System Configurator: Click tools in the Hero sidebar to swap detailed spec sheet values, metrics, and execution triggers on the fly.
+- Interactive Bento Matrix: Test-drive simulators inside the tools grid (increment score dials, search mock jobs, scan GitHub usernames, and move items across Kanban boards).
+- Company Spec Dashboard: Select target firms from the scrolling directory list to load packages, processes, and sample assessment questions.
+- Resume Template Styler: Toggle templates to dynamically reshape padding, alignment, lines count, and font presets on a mockup document.
+- Testimonial Quote Carousel: Slide successfully placed student quotes with arrow controls and count indices.
+- Zero-Radius Bounds: Zero corner rounding (`rounded-none`) for all blocks, inputs, and card shapes. Pill rounding (`rounded-full`) exclusively for buttons.
 
 ------------------------------------------------------------------------
 6. TROUBLESHOOTING & COMMON BUGS
 ------------------------------------------------------------------------
 Q: Brand icons (YouTube, LinkedIn) fail to load or error in Lucide React?
 A: In newer versions of Lucide React, brand-related icons were removed.
-   This project resolves this by using inline SVGs directly inside Footer.jsx.
+   This project resolves this by using inline SVGs directly inside Hero.jsx and Footer.jsx.
    Do not import brand icons from 'lucide-react' directly.
 
 Q: Port 5173 is already in use?
