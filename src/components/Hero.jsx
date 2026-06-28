@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronRight, ArrowUpRight, ArrowRight } from 'lucide-react';
+import { ChevronRight, ArrowRight, Check } from 'lucide-react';
 
 export default function Hero() {
   const terminalStrings = [
@@ -98,184 +98,271 @@ export default function Hero() {
   ];
 
   const toolsList = [
-    { name: 'Job Ready Score', desc: '100 pt score', emoji: '🎯', href: 'https://www.lets-code.co.in/dashboard/job-ready-score/' },
-    { name: 'Mock Interview', desc: '35+ topics', emoji: '🧠', href: 'https://www.lets-code.co.in/dashboard/mocktest/' },
-    { name: 'AI Resume Studio', desc: '95% ATS pass rate', emoji: '📄', href: 'https://www.lets-code.co.in/dashboard/optimizeresume/' },
-    { name: 'LinkedIn Optimizer', desc: '3.5x more views', emoji: '💼', href: 'https://www.lets-code.co.in/dashboard/optimiselinkedin/' },
-    { name: 'AI Job Finder', desc: 'Should I Apply? Engine', emoji: '🔍', href: 'https://www.lets-code.co.in/dashboard/job-finder/' },
-    { name: 'Cover Letter AI', desc: '8-10 keywords', emoji: '✉️', href: 'https://www.lets-code.co.in/dashboard/cover-letter/' },
-    { name: 'Job Tracker', desc: 'Kanban + List view', emoji: '📊', href: 'https://www.lets-code.co.in/dashboard/tracker/' },
-    { name: 'GitHub Optimizer', desc: '100 pt score', emoji: '🐙', href: 'https://www.lets-code.co.in/dashboard/github-optimizer/' },
+    {
+      name: 'Job Ready Score',
+      desc: '100 pt score',
+      emoji: '🎯',
+      href: 'https://www.lets-code.co.in/dashboard/job-ready-score/',
+      longDesc: 'Get a brutally honest 100-point score evaluating your resume, LinkedIn profile, and GitHub footprint. Comes with a personalized 90-day step-by-step preparation roadmap.',
+      specs: ['ATS compatibility parse', 'Keyword gap analyser', '90-day action calendar'],
+      metric: '92% accurate'
+    },
+    {
+      name: 'Mock Interview',
+      desc: '35+ topics',
+      emoji: '🧠',
+      href: 'https://www.lets-code.co.in/dashboard/mocktest/',
+      longDesc: 'Practice with real-time technical mock tests across 35+ core computer science topics including DSA, databases, system design, and quantitative aptitude.',
+      specs: ['Real-time evaluation', 'Adaptive difficulty engine', 'Topic-wise breakdown reports'],
+      metric: '35+ subjects'
+    },
+    {
+      name: 'AI Resume Studio',
+      desc: '95% ATS pass rate',
+      emoji: '📄',
+      href: 'https://www.lets-code.co.in/dashboard/optimizeresume/',
+      longDesc: 'Analyze and optimize your resume in minutes. Use professional pre-formatted LaTeX templates with proven high ATS passing rates.',
+      specs: ['LaTeX style formatting', 'Instant layout compilation', 'PDF/DOC direct exports'],
+      metric: '95% pass rate'
+    },
+    {
+      name: 'LinkedIn Optimizer',
+      desc: '3.5x more views',
+      emoji: '💼',
+      href: 'https://www.lets-code.co.in/dashboard/optimiselinkedin/',
+      longDesc: 'Extract profile parameters and generate optimized headlines, about summaries, and skills matrices to significantly increase recruiter discovery.',
+      specs: ['SEO keyword density engine', 'Headline generators', 'Activity checklist tracker'],
+      metric: '3.5x discovery'
+    },
+    {
+      name: 'AI Job Finder',
+      desc: 'Fit Score Engine',
+      emoji: '🔍',
+      href: 'https://www.lets-code.co.in/dashboard/job-finder/',
+      longDesc: 'Scan live job boards and calculate custom fit match scores for each open role using your uploaded resume data.',
+      specs: ['JD-resume keyword check', 'Daily target alerts', 'Sponsor validation'],
+      metric: 'Live board scan'
+    },
+    {
+      name: 'Cover Letter AI',
+      desc: '8-10 keywords',
+      emoji: '✉️',
+      href: 'https://www.lets-code.co.in/dashboard/cover-letter/',
+      longDesc: 'Generate contextual cover letters targeted to specific job roles and keyword requirements instantly.',
+      specs: ['Role-specific alignment', 'Custom tone adjusters', 'ATS keyword insertion'],
+      metric: 'Instant builder'
+    },
+    {
+      name: 'Job Tracker',
+      desc: 'Kanban board',
+      emoji: '📊',
+      href: 'https://www.lets-code.co.in/dashboard/tracker/',
+      longDesc: 'Manage and keep track of your job applications on a visual Kanban board, integrated with study guides and interview prompts.',
+      specs: ['Visual pipelines', 'Reminders & alerts', 'Preparation links logging'],
+      metric: 'Complete logs'
+    },
+    {
+      name: 'GitHub Optimizer',
+      desc: '100 pt review',
+      emoji: '🐙',
+      href: 'https://www.lets-code.co.in/dashboard/github-optimizer/',
+      longDesc: 'Analyze your GitHub username to receive recommendations on your profile, repository descriptions, pinned items, and overall commit activity.',
+      specs: ['README verification', 'Pinned repo critique', 'Contribution graphs scan'],
+      metric: '100 pt critique'
+    }
   ];
+
+  const [activeToolIndex, setActiveToolIndex] = useState(0);
+  const activeTool = toolsList[activeToolIndex];
 
   return (
     <section className="relative min-h-screen w-full bg-black flex flex-col items-center justify-center pt-28 pb-20 px-6 md:px-12 overflow-hidden border-b border-hairline">
-      <div className="relative z-10 max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div className="relative z-10 max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-stretch">
         
         {/* Left Column: Copy & Core Triggers */}
-        <div className="lg:col-span-7 flex flex-col items-start text-left">
-          {/* Eyebrow Pill */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none border border-hairline bg-transparent mb-6 animate-fade-in font-mono text-[10px] text-muted-color uppercase tracking-[2px]">
-            <span className="w-1.5 h-1.5 rounded-none bg-[#5fa657] inline-block animate-pulse"></span>
-            <span>Trusted by 1,00,000+ Engineers · Always Free</span>
-          </div>
-
-          {/* H1 Headline */}
-          <h1 className="font-display text-[2.2rem] md:text-[3.2rem] lg:text-[4.2rem] leading-[1.08] font-normal text-white uppercase tracking-[4px] mb-6">
-            Everything You Need to Land Your Dream Tech Job
-          </h1>
-
-          {/* Subtext */}
-          <p className="font-serif text-base md:text-lg text-body-color max-w-xl mb-8 leading-relaxed">
-            Eight free AI career tools, 1000+ interview resources, company prep guides, job tracker, and a community of 1 lakh+ engineers — all free, all in one place.
-          </p>
-
-          {/* Terminal Window Card (Austeere & Precise) */}
-          <div className="w-full max-w-lg bg-surface-soft border border-hairline rounded-none shadow-none overflow-hidden mb-8">
-            <div className="bg-black px-4 py-2 flex items-center justify-between border-b border-hairline">
-              <div className="flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full border border-hairline bg-transparent inline-block"></span>
-                <span className="w-2 h-2 rounded-full border border-hairline bg-transparent inline-block"></span>
-                <span className="w-2 h-2 rounded-full border border-hairline bg-transparent inline-block"></span>
-              </div>
-              <span className="text-[9px] font-mono text-muted-color/60 uppercase tracking-wider">machined bash logs</span>
-              <div className="w-8"></div>
+        <div className="lg:col-span-7 flex flex-col justify-between items-start text-left">
+          <div>
+            {/* Eyebrow Pill */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none border border-hairline bg-transparent mb-6 animate-fade-in font-mono text-[10px] text-muted-color uppercase tracking-[2px]">
+              <span className="w-1.5 h-1.5 rounded-none bg-[#5fa657] inline-block animate-pulse"></span>
+              <span>Trusted by 1,00,000+ Engineers · Always Free</span>
             </div>
-            <div className="p-4 font-mono text-[11px] md:text-[12px] leading-relaxed text-body-color">
-              <div>
-                <span className="text-muted-color">letscode@prep:~$ </span>
-                <span className="text-white">✓ Ananya cracked Google SWE — CTC ₹42 LPA</span>
+
+            {/* H1 Headline */}
+            <h1 className="font-display text-[2.2rem] md:text-[3.2rem] lg:text-[4.2rem] leading-[1.08] font-normal text-white uppercase tracking-[4px] mb-6">
+              Everything You Need to Land Your Dream Tech Job
+            </h1>
+
+            {/* Subtext */}
+            <p className="font-serif text-base md:text-lg text-body-color max-w-xl mb-8 leading-relaxed">
+              Eight free AI career tools, 1000+ interview resources, company prep guides, job tracker, and a community of 1 lakh+ engineers — all free, all in one place.
+            </p>
+
+            {/* Terminal Window Card */}
+            <div className="w-full max-w-lg bg-surface-soft border border-hairline rounded-none shadow-none overflow-hidden mb-8">
+              <div className="bg-black px-4 py-2 flex items-center justify-between border-b border-hairline">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full border border-hairline bg-transparent inline-block"></span>
+                  <span className="w-2 h-2 rounded-full border border-hairline bg-transparent inline-block"></span>
+                  <span className="w-2 h-2 rounded-full border border-hairline bg-transparent inline-block"></span>
+                </div>
+                <span className="text-[9px] font-mono text-muted-color/60 uppercase tracking-wider">machined bash logs</span>
+                <div className="w-8"></div>
               </div>
-              <div className="mt-1 flex items-start">
-                <span className="text-muted-color shrink-0">letscode@prep:~$&nbsp;</span>
-                <div className="inline-block text-white">
-                  {typedText}
-                  <span className="w-1.5 h-4 bg-white inline-block align-middle ml-0.5 cursor-blink"></span>
+              <div className="p-4 font-mono text-[11px] md:text-[12px] leading-relaxed text-body-color">
+                <div>
+                  <span className="text-muted-color">letscode@prep:~$ </span>
+                  <span className="text-white">✓ Ananya cracked Google SWE — CTC ₹42 LPA</span>
+                </div>
+                <div className="mt-1 flex items-start">
+                  <span className="text-muted-color shrink-0">letscode@prep:~$&nbsp;</span>
+                  <div className="inline-block text-white">
+                    {typedText}
+                    <span className="w-1.5 h-4 bg-white inline-block align-middle ml-0.5 cursor-blink"></span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Two CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-8 font-mono">
-            <a
-              href="https://www.lets-code.co.in/dashboard/job-ready-score/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-transparent border border-white text-white hover:bg-white hover:text-black px-7 py-3 rounded-full font-normal text-xs uppercase tracking-[2.5px] transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-white"
-            >
-              <span>Check Job Ready Score — Free</span>
-              <ArrowRight size={14} />
-            </a>
-            <a
-              href="https://www.lets-code.co.in/dashboard/mocktest/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 border border-hairline hover:border-white bg-transparent text-white px-7 py-3 rounded-full font-normal text-xs uppercase tracking-[2.5px] transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-white"
-            >
-              <span>Start Mock Interview</span>
-            </a>
-          </div>
-
-          {/* Social Links Row (Monochrome aesthetic) */}
-          <div className="flex items-center gap-3 mb-10">
-            {socialLinks.map((social) => (
+            {/* Two CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-8 font-mono">
               <a
-                key={social.name}
-                href={social.href}
+                href="https://www.lets-code.co.in/dashboard/job-ready-score/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={social.name}
-                className="w-9 h-9 rounded-full border border-hairline bg-transparent flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5 text-muted-color hover:text-white hover:border-white"
+                className="flex items-center justify-center gap-2 bg-transparent border border-white text-white hover:bg-white hover:text-black px-7 py-3 rounded-full font-normal text-xs uppercase tracking-[2.5px] transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-white"
               >
-                {social.icon}
+                <span>Check Job Ready Score — Free</span>
+                <ArrowRight size={14} />
               </a>
-            ))}
-          </div>
-
-          {/* Stats Cards Row (Zero Radius & Grid) */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-xl font-mono">
-            <a href="https://discord.gg/XRBheB9QF9" target="_blank" rel="noopener noreferrer" className="bg-surface-card border border-hairline p-3.5 rounded-none flex flex-col items-start transition-colors duration-200 hover:border-white">
-              <span className="font-display font-normal text-xl md:text-2xl text-white uppercase tracking-[1px]">
-                1,00,000+
-              </span>
-              <span className="text-[9px] text-muted-color uppercase tracking-wider mt-1.5">Engineers</span>
-            </a>
-            <a href="https://www.lets-code.co.in/dashboard/" target="_blank" rel="noopener noreferrer" className="bg-surface-card border border-hairline p-3.5 rounded-none flex flex-col items-start transition-colors duration-200 hover:border-white">
-              <span className="font-display font-normal text-xl md:text-2xl text-white uppercase tracking-[1px]">
-                8 Free
-              </span>
-              <span className="text-[9px] text-muted-color uppercase tracking-wider mt-1.5">AI Tools</span>
-            </a>
-            <a href="https://www.lets-code.co.in/dashboard/mocktest/" target="_blank" rel="noopener noreferrer" className="bg-surface-card border border-hairline p-3.5 rounded-none flex flex-col items-start transition-colors duration-200 hover:border-white">
-              <span className="font-display font-normal text-xl md:text-2xl text-white uppercase tracking-[1px]">
-                35+
-              </span>
-              <span className="text-[9px] text-muted-color uppercase tracking-wider mt-1.5">Topics</span>
-            </a>
-            <a href="https://www.lets-code.co.in/prepare/" target="_blank" rel="noopener noreferrer" className="bg-surface-card border border-hairline p-3.5 rounded-none flex flex-col items-start transition-colors duration-200 hover:border-white">
-              <span className="font-display font-normal text-xl md:text-2xl text-white uppercase tracking-[1px]">
-                25+
-              </span>
-              <span className="text-[9px] text-muted-color uppercase tracking-wider mt-1.5">Guides</span>
-            </a>
-          </div>
-        </div>
-
-        {/* Right Column: 8 Free AI Career Tools Sidebar (Austere Luxury Grid) */}
-        <div className="lg:col-span-5 w-full font-mono">
-          <div className="bg-surface-card border border-hairline rounded-none p-5 shadow-none flex flex-col gap-4">
-            
-            {/* Sidebar Title */}
-            <div className="flex items-center justify-between border-b border-hairline pb-3 mb-1">
-              <span className="text-[10px] font-bold text-muted-color uppercase tracking-wider">
-                8 Free AI Career Tools
-              </span>
-              <span className="text-[9px] font-bold text-white border border-white px-2 py-0.5 rounded-none uppercase tracking-wider">
-                Free Access
-              </span>
+              <a
+                href="https://www.lets-code.co.in/dashboard/mocktest/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 border border-hairline hover:border-white bg-transparent text-white px-7 py-3 rounded-full font-normal text-xs uppercase tracking-[2.5px] transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-white"
+              >
+                <span>Start Mock Interview</span>
+              </a>
             </div>
+          </div>
 
-            {/* List of 8 tools */}
-            <div className="flex flex-col gap-2">
-              {toolsList.map((tool) => (
+          <div>
+            {/* Social Links Row */}
+            <div className="flex items-center gap-3 mb-8">
+              {socialLinks.map((social) => (
                 <a
-                  key={tool.name}
-                  href={tool.href}
+                  key={social.name}
+                  href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between p-2.5 rounded-none bg-transparent hover:bg-surface-soft border-b border-hairline/60 last:border-0 transition-all duration-200 group"
+                  aria-label={social.name}
+                  className="w-9 h-9 rounded-full border border-hairline bg-transparent flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5 text-muted-color hover:text-white hover:border-white"
                 >
-                  <div className="flex items-center gap-3">
-                    {/* Emoji Box */}
-                    <div className="w-8 h-8 rounded-none border border-hairline flex items-center justify-center text-sm bg-black">
-                      {tool.emoji}
-                    </div>
-                    {/* Info */}
-                    <div className="text-left font-mono">
-                      <h3 className="text-xs font-semibold text-white group-hover:text-ice-blue transition-colors duration-200 uppercase tracking-wider">
-                        {tool.name}
-                      </h3>
-                      <p className="text-[9px] text-muted-color mt-0.5 uppercase tracking-wide">
-                        {tool.desc}
-                      </p>
-                    </div>
-                  </div>
-                  <ChevronRight size={14} className="text-muted-color group-hover:text-white transition-all duration-200 group-hover:translate-x-0.5" />
+                  {social.icon}
                 </a>
               ))}
             </div>
 
-            {/* Footer Action Button */}
-            <a
-              href="https://www.lets-code.co.in/dashboard/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full mt-2 bg-transparent text-white border border-white hover:bg-white hover:text-black py-3 rounded-full font-normal text-xs uppercase tracking-[2.5px] transition-all duration-200 flex items-center justify-center gap-2 focus:outline-none"
-            >
-              <span>Open AI Toolkit</span>
-              <ArrowUpRight size={14} />
-            </a>
+            {/* Stats Cards Row */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-xl font-mono">
+              <a href="https://discord.gg/XRBheB9QF9" target="_blank" rel="noopener noreferrer" className="bg-surface-card border border-hairline p-3.5 rounded-none flex flex-col items-start transition-colors duration-200 hover:border-white">
+                <span className="font-display font-normal text-xl md:text-2xl text-white uppercase tracking-[1px]">
+                  1,00,000+
+                </span>
+                <span className="text-[9px] text-muted-color uppercase tracking-wider mt-1.5">Engineers</span>
+              </a>
+              <a href="https://www.lets-code.co.in/dashboard/" target="_blank" rel="noopener noreferrer" className="bg-surface-card border border-hairline p-3.5 rounded-none flex flex-col items-start transition-colors duration-200 hover:border-white">
+                <span className="font-display font-normal text-xl md:text-2xl text-white uppercase tracking-[1px]">
+                  8 Free
+                </span>
+                <span className="text-[9px] text-muted-color uppercase tracking-wider mt-1.5">AI Tools</span>
+              </a>
+              <a href="https://www.lets-code.co.in/dashboard/mocktest/" target="_blank" rel="noopener noreferrer" className="bg-surface-card border border-hairline p-3.5 rounded-none flex flex-col items-start transition-colors duration-200 hover:border-white">
+                <span className="font-display font-normal text-xl md:text-2xl text-white uppercase tracking-[1px]">
+                  35+
+                </span>
+                <span className="text-[9px] text-muted-color uppercase tracking-wider mt-1.5">Topics</span>
+              </a>
+              <a href="https://www.lets-code.co.in/prepare/" target="_blank" rel="noopener noreferrer" className="bg-surface-card border border-hairline p-3.5 rounded-none flex flex-col items-start transition-colors duration-200 hover:border-white">
+                <span className="font-display font-normal text-xl md:text-2xl text-white uppercase tracking-[1px]">
+                  25+
+                </span>
+                <span className="text-[9px] text-muted-color uppercase tracking-wider mt-1.5">Guides</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column: Interactive Tools Configurator */}
+        <div className="lg:col-span-5 w-full font-mono flex flex-col items-stretch">
+          <div className="bg-surface-card border border-hairline rounded-none p-5 flex flex-col justify-between flex-1 gap-6">
+            
+            {/* Header */}
+            <div className="flex items-center justify-between border-b border-hairline pb-3">
+              <span className="text-[10px] font-bold text-muted-color uppercase tracking-wider">
+                System Configurator
+              </span>
+              <span className="text-[9px] font-bold text-white border border-white px-2 py-0.5 rounded-none uppercase tracking-wider">
+                Select AI Component
+              </span>
+            </div>
+
+            {/* Configurator List */}
+            <div className="grid grid-cols-2 gap-2.5">
+              {toolsList.map((tool, idx) => (
+                <button
+                  key={tool.name}
+                  onClick={() => setActiveToolIndex(idx)}
+                  className={`flex items-center gap-2.5 p-2 rounded-none border text-left transition-all duration-200 ${
+                    activeToolIndex === idx
+                      ? 'border-white bg-surface-soft'
+                      : 'border-hairline bg-transparent hover:border-white/50'
+                  }`}
+                >
+                  <span className="text-sm shrink-0">{tool.emoji}</span>
+                  <span className="text-[10px] font-semibold text-white uppercase tracking-wider line-clamp-1">
+                    {tool.name}
+                  </span>
+                </button>
+              ))}
+            </div>
+
+            {/* Spec Sheet of Active Component */}
+            <div className="bg-black border border-hairline rounded-none p-4 flex flex-col justify-between flex-1 gap-4 text-left">
+              <div>
+                <div className="flex items-center justify-between border-b border-hairline pb-2 mb-3">
+                  <span className="text-[11px] font-bold text-white uppercase tracking-wider">
+                    {activeTool.name} SPEC SHEET
+                  </span>
+                  <span className="text-[9px] text-[#5fa657] uppercase tracking-widest font-bold">
+                    {activeTool.metric}
+                  </span>
+                </div>
+                <p className="font-serif text-xs text-body-color leading-relaxed normal-case mb-4">
+                  {activeTool.longDesc}
+                </p>
+                <div className="flex flex-col gap-2">
+                  {activeTool.specs.map((spec) => (
+                    <div key={spec} className="flex items-center gap-2 text-[9px] text-muted-color uppercase tracking-wider">
+                      <Check size={10} className="text-white" />
+                      <span>{spec}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Action Button */}
+              <a
+                href={activeTool.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-transparent text-white border border-white hover:bg-white hover:text-black py-2.5 rounded-full font-normal text-xs uppercase tracking-[2.5px] transition-all duration-200 flex items-center justify-center gap-2 focus:outline-none no-underline"
+              >
+                <span>Execute Component</span>
+                <ChevronRight size={14} />
+              </a>
+            </div>
+
           </div>
         </div>
       </div>

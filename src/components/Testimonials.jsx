@@ -1,82 +1,113 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 export default function Testimonials() {
-  const testimonials = [
+  const slides = [
     {
-      id: 1,
-      badge: '✓ Landed at Google',
-      quote: "Let's Code's mock interview tool and company-wise PYQs were the reason I could clear my technical rounds. The AI score on my resume was brutally honest and highlighted exactly what I was missing. Always grateful!",
+      id: '01',
+      badge: '✓ LANDED AT GOOGLE',
+      quote: "Let's Code's mock interview tool and company-wise PYQs were the reason I could clear my technical rounds. The AI score on my resume was brutally honest and highlighted exactly what I was missing.",
       name: 'Jinal Mehta',
       college: 'Nirma University, Ahmedabad',
     },
     {
-      id: 2,
-      badge: '✓ Landed at Microsoft',
+      id: '02',
+      badge: '✓ LANDED AT MICROSOFT',
       quote: "I used the LinkedIn optimizer and GitHub reviewer. My profile visibility increased by 4x, which led to a recruiter reaching out directly for a SWE internship. The Discord community is the best place to discuss interview patterns.",
       name: 'Kuldeep Panwar',
       college: 'IIT Roorkee',
     },
     {
-      id: 3,
-      badge: '✓ Landed at JP Morgan',
+      id: '03',
+      badge: '✓ LANDED AT JP MORGAN',
       quote: "As a tier-3 college student, off-campus placements felt like a nightmare. Let's Code provided me with structured DSA roadmaps and ATS-friendly resume templates. The AI Job Finder matched me to open opportunities perfectly.",
       name: 'Megha Chhapre',
       college: 'LNCT, Bhopal',
     },
   ];
 
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeSlide = slides[activeIndex];
+
+  const nextSlide = () => {
+    setActiveIndex((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setActiveIndex((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
   return (
-    <section className="relative bg-black py-28 px-6 md:px-12 w-full overflow-hidden border-b border-hairline">
-      <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center">
+    <section className="relative bg-black py-28 px-6 md:px-12 w-full overflow-hidden border-b border-hairline font-mono text-left">
+      <div className="max-w-4xl mx-auto flex flex-col items-start">
+        
         {/* Eyebrow */}
-        <div className="px-3.5 py-1.5 rounded-none border border-hairline bg-transparent text-muted-color font-mono text-[10px] uppercase tracking-[2px] mb-3">
+        <div className="px-3.5 py-1.5 rounded-none border border-hairline bg-transparent text-muted-color text-[10px] uppercase tracking-[2px] mb-12">
           🎓 Success Stories
         </div>
 
-        {/* Title */}
-        <h2 className="font-display text-2xl md:text-4xl lg:text-[2.5rem] text-center font-normal text-white uppercase tracking-[3px] mb-4">
-          Cracked by Indian engineering students
-        </h2>
-        <p className="font-serif text-base text-body-color text-center max-w-md mb-16 leading-relaxed">
-          See how engineering students from all across India used Let's Code to secure their dream jobs.
-        </p>
+        {/* Slide Window */}
+        <div className="w-full flex flex-col gap-8 min-h-[320px] justify-between relative group/slide">
+          
+          {/* Faded Quote decoration */}
+          <span className="absolute -top-12 -left-6 font-display text-9xl text-white/5 select-none pointer-events-none">
+            “
+          </span>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full font-serif">
-          {testimonials.map((t) => (
-            <div
-              key={t.id}
-              className="reveal relative bg-surface-card border border-hairline hover:border-white rounded-none p-6 md:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-none group"
-            >
-              {/* Giant Faded Quote Mark */}
-              <span className="absolute top-2 right-5 font-display text-8xl text-white/5 select-none pointer-events-none font-normal">
-                “
+          <div className="relative z-10 flex flex-col items-start gap-6">
+            {/* Slide Badge */}
+            <div className="inline-block px-3 py-1 border border-hairline bg-surface-card text-white text-[9px] uppercase tracking-widest font-mono">
+              {activeSlide.badge}
+            </div>
+
+            {/* Slide Quote (Massive Editorial Serif) */}
+            <p className="font-serif italic text-xl md:text-3xl lg:text-[2.2rem] text-body-strong leading-relaxed transition-all duration-300">
+              "{activeSlide.quote}"
+            </p>
+          </div>
+
+          {/* User Details & Controls */}
+          <div className="border-t border-hairline pt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-6 w-full mt-auto">
+            
+            {/* Meta */}
+            <div>
+              <h4 className="font-display font-normal text-lg uppercase text-white tracking-[1.5px] leading-none">
+                {activeSlide.name}
+              </h4>
+              <span className="text-[10px] text-muted-color uppercase tracking-wider mt-2.5 block">
+                {activeSlide.college}
+              </span>
+            </div>
+
+            {/* Controls */}
+            <div className="flex items-center gap-4 shrink-0 font-mono">
+              <span className="text-[10px] text-muted-color uppercase tracking-widest font-bold">
+                {activeSlide.id} / 0{slides.length}
               </span>
 
-              <div className="relative z-10">
-                {/* Success Tag */}
-                <div className="inline-block px-3 py-1 rounded-none border border-hairline bg-black text-muted-color font-mono text-[9px] uppercase tracking-widest mb-5">
-                  {t.badge}
-                </div>
+              {/* Prev */}
+              <button
+                onClick={prevSlide}
+                className="w-9 h-9 rounded-full border border-hairline hover:border-white text-muted-color hover:text-white flex items-center justify-center transition-all duration-200"
+                aria-label="Previous slide"
+              >
+                <ArrowLeft size={14} />
+              </button>
 
-                {/* Quote Text */}
-                <p className="text-sm md:text-base text-body-color group-hover:text-white leading-relaxed mb-6 italic transition-colors duration-200">
-                  "{t.quote}"
-                </p>
-              </div>
-
-              {/* Student Metadata */}
-              <div className="border-t border-hairline pt-4 mt-auto">
-                <h4 className="font-display font-normal text-base uppercase text-white tracking-[1.5px]">
-                  {t.name}
-                </h4>
-                <p className="text-[10px] font-mono text-muted-color uppercase tracking-wider mt-1">
-                  {t.college}
-                </p>
-              </div>
+              {/* Next */}
+              <button
+                onClick={nextSlide}
+                className="w-9 h-9 rounded-full border border-hairline hover:border-white text-muted-color hover:text-white flex items-center justify-center transition-all duration-200"
+                aria-label="Next slide"
+              >
+                <ArrowRight size={14} />
+              </button>
             </div>
-          ))}
+
+          </div>
+
         </div>
+
       </div>
     </section>
   );
