@@ -54,7 +54,7 @@ export default function Navbar({ isLoggedIn, userEmail, onLogout, onLoginClick }
               <span className="w-1.5 h-1.5 rounded-full bg-green inline-block animate-pulse"></span>
               <span>Hi, {getUsername(userEmail)}</span>
             </div>
-            <button 
+            <button
               onClick={onLogout}
               className="text-muted hover:text-white border border-border/60 hover:border-white/50 px-4 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-violet"
             >
@@ -63,13 +63,13 @@ export default function Navbar({ isLoggedIn, userEmail, onLogout, onLoginClick }
           </>
         ) : (
           <>
-            <button 
+            <button
               onClick={onLoginClick}
               className="text-white hover:text-white/80 border border-border px-4.5 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-violet"
             >
               Log In
             </button>
-            <button 
+            <button
               onClick={onLoginClick}
               className="bg-gradient-to-r from-violet to-violet2 hover:from-violet2 hover:to-violet text-white px-5 py-1.5 rounded-lg text-sm font-semibold shadow-[0_0_15px_rgba(124,58,237,0.3)] hover:shadow-[0_0_25px_rgba(157,92,255,0.5)] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan"
             >

@@ -50,7 +50,7 @@ export default function Testimonials() {
           {testimonials.map((t) => (
             <div
               key={t.id}
-              className="reveal relative bg-card/90 backdrop-blur-sm border border-border/80 hover:border-violet2 rounded-2xl p-6.5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:box-shadow-violet-hover group"
+              className="reveal relative bg-card/90 backdrop-blur-sm border border-border/80 hover:border-violet2 rounded-2xl p-6 md:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:box-shadow-violet-hover group"
             >
               {/* Giant Faded Quote Mark */}
               <span className="absolute top-2 right-5 font-display text-8xl text-violet2/15 select-none pointer-events-none font-bold">
