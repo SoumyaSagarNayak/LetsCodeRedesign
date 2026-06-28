@@ -65,7 +65,7 @@ export default function Navbar({ isLoggedIn, userEmail, onLogout, onLoginClick }
           <>
             <button
               onClick={onLoginClick}
-              className="text-white hover:text-white/80 border border-border px-4.5 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-violet"
+              className="text-white hover:text-white/80 border border-border px-5 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-violet"
             >
               Log In
             </button>
