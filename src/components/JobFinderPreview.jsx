@@ -16,7 +16,7 @@ export default function JobFinderPreview() {
       company: 'Google',
       city: 'Bangalore, India',
       match: '92%',
-      matchColor: 'bg-green/10 text-green border-green/30',
+      matchColor: 'border-hairline text-white',
       logoBg: 'bg-[#4285F4]',
       logoChar: 'G',
     },
@@ -26,7 +26,7 @@ export default function JobFinderPreview() {
       company: 'Amazon',
       city: 'Hyderabad, India',
       match: '78%',
-      matchColor: 'bg-amber/10 text-amber border-amber/30',
+      matchColor: 'border-hairline text-white',
       logoBg: 'bg-[#FF9900]',
       logoChar: 'a',
     },
@@ -36,34 +36,37 @@ export default function JobFinderPreview() {
       company: 'Microsoft',
       city: 'Noida, India',
       match: '65%',
-      matchColor: 'bg-violet/10 text-violet border-violet/30',
+      matchColor: 'border-hairline text-white',
       logoBg: 'bg-[#00A4EF]',
       logoChar: 'M',
     },
   ];
 
   return (
-    <section id="jobs" className="bg-[#0A0F1E] py-24 px-6 md:px-12 w-full overflow-hidden border-t border-border/20">
+    <section id="jobs" className="bg-black py-28 px-6 md:px-12 w-full overflow-hidden border-b border-hairline">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left Side: Copy */}
-        <div className="reveal flex flex-col items-start font-body">
-          <div className="px-3 py-1 rounded-full border border-violet/20 bg-violet/5 text-violet2 text-xs font-semibold uppercase tracking-wider mb-4">
+        <div className="reveal flex flex-col items-start font-mono text-left">
+          {/* Eyebrow */}
+          <div className="px-3.5 py-1.5 rounded-none border border-hairline bg-transparent text-muted-color text-[10px] font-normal uppercase tracking-wider mb-4">
             🔍 AI Job Finder
           </div>
-          <h2 className="font-display text-2xl md:text-4xl lg:text-[2.6rem] font-bold text-white tracking-tight leading-tight mb-6 text-left">
+
+          <h2 className="font-display text-2xl md:text-4xl lg:text-[2.5rem] font-normal text-white uppercase tracking-[3px] leading-tight mb-6 text-left">
             Find matched jobs. Skip the endless scrolling.
           </h2>
-          <p className="text-sm md:text-base text-muted mb-8 leading-relaxed text-left max-w-xl">
+
+          <p className="font-serif text-base text-body-color mb-8 leading-relaxed text-left max-w-xl normal-case tracking-normal">
             Our AI Job Finder works behind the scenes to index open placement opportunities, score your fit score, and give you a detailed action plan.
           </p>
 
-          <ul className="flex flex-col gap-3.5 mb-8 w-full">
+          <ul className="flex flex-col gap-3.5 mb-8 w-full font-serif text-sm">
             {bulletPoints.map((point) => (
               <li key={point} className="flex items-start gap-3 text-left">
-                <div className="w-5 h-5 rounded-full bg-green/10 border border-green/30 flex items-center justify-center shrink-0 mt-0.5">
-                  <Check size={12} className="text-green font-bold" />
+                <div className="w-5 h-5 rounded-none border border-hairline flex items-center justify-center shrink-0 mt-0.5 bg-transparent">
+                  <Check size={10} className="text-white" />
                 </div>
-                <span className="text-sm md:text-base text-[#F0F4FF] font-medium">
+                <span className="text-body-color tracking-normal leading-relaxed">
                   {point}
                 </span>
               </li>
@@ -74,51 +77,51 @@ export default function JobFinderPreview() {
             href="https://www.lets-code.co.in/dashboard/job-finder/"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gradient-to-r from-violet to-violet2 hover:from-violet2 hover:to-violet text-white px-7 py-3.5 rounded-xl font-bold text-base shadow-[0_0_20px_rgba(124,58,237,0.35)] transition-all duration-200 flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-cyan no-underline"
+            className="bg-transparent text-white border border-white hover:bg-white hover:text-black px-7 py-3.5 rounded-full font-normal text-xs uppercase tracking-[2.5px] transition-all duration-200 flex items-center gap-2 focus:outline-none no-underline"
           >
             <span>Find Matching Jobs</span>
-            <ArrowRight size={18} />
+            <ArrowRight size={14} />
           </a>
         </div>
 
         {/* Right Side: Visual Stack */}
-        <div className="reveal flex flex-col gap-4 w-full max-w-md mx-auto font-body">
+        <div className="reveal flex flex-col gap-4 w-full max-w-md mx-auto font-mono">
           {previewJobs.map((job) => (
             <a
               key={job.id}
               href="https://www.lets-code.co.in/jobs/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-card border border-border/80 rounded-xl p-4 flex items-center justify-between gap-4 hover:border-violet/60 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(124,58,237,0.15)] group no-underline"
+              className="bg-surface-card border border-hairline rounded-none p-4 flex items-center justify-between gap-4 hover:border-white transition-all duration-300 hover:-translate-y-0.5 group no-underline"
             >
               <div className="flex items-center gap-4">
                 {/* Logo */}
                 <div
-                  className={`w-10 h-10 rounded-lg flex items-center justify-center font-display font-bold text-base text-white uppercase shadow-sm shrink-0`}
+                  className="w-10 h-10 rounded-none flex items-center justify-center font-display font-normal text-base text-white uppercase shrink-0"
                   style={{ backgroundColor: job.logoBg }}
                 >
                   {job.logoChar}
                 </div>
                 {/* Info */}
-                <div className="text-left">
-                  <h3 className="font-semibold text-sm md:text-base text-white group-hover:text-cyan transition-colors duration-200 line-clamp-1">
+                <div className="text-left font-mono">
+                  <h3 className="font-semibold text-xs text-white uppercase tracking-wider group-hover:text-ice-blue transition-colors duration-200 line-clamp-1">
                     {job.role}
                   </h3>
-                  <p className="text-xs text-muted mt-0.5">
+                  <p className="text-[10px] text-muted-color uppercase tracking-wider mt-0.5">
                     {job.company} · {job.city}
                   </p>
                 </div>
               </div>
 
               {/* Match Score Pill */}
-              <div className={`px-2.5 py-1 text-xs font-bold rounded-lg border uppercase tracking-wider shrink-0 ${job.matchColor}`}>
-                {job.match} Fit
+              <div className={`px-2.5 py-1 text-[9px] font-normal rounded-none border uppercase tracking-widest shrink-0 ${job.matchColor}`}>
+                {job.match} Match
               </div>
             </a>
           ))}
 
           {/* Under Note */}
-          <p className="text-xs text-muted/80 italic text-center mt-2">
+          <p className="text-xs text-muted-color/60 italic text-center mt-2 font-serif">
             + 50 more jobs matched to your resume
           </p>
         </div>

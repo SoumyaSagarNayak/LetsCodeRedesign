@@ -83,7 +83,7 @@ export default function App() {
   };
 
   return (
-    <div className="bg-[#0A0F1E] text-[#F0F4FF] font-body min-h-screen flex flex-col w-full overflow-x-hidden antialiased">
+    <div className="bg-black text-body-color font-serif min-h-screen flex flex-col w-full overflow-x-hidden antialiased">
       {/* 1. Glassmorphism Fixed Navbar */}
       <Navbar 
         isLoggedIn={isLoggedIn}
@@ -131,8 +131,8 @@ export default function App() {
 
       {/* Toast Notification */}
       {toast.show && (
-        <div className="fixed bottom-6 right-6 z-50 bg-[#131C30]/90 backdrop-blur-md border border-green/30 text-[#F0F4FF] px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3 animate-in slide-in-from-bottom-5 duration-300 font-semibold text-sm max-w-sm">
-          <CheckCircle2 size={18} className="text-green shrink-0" />
+        <div className="fixed bottom-6 right-6 z-50 bg-surface-card border border-[#5fa657]/30 text-white px-5 py-3.5 rounded-none shadow-none flex items-center gap-3 animate-in slide-in-from-bottom-5 duration-300 font-mono text-xs uppercase tracking-wider max-w-sm">
+          <CheckCircle2 size={16} className="text-[#5fa657] shrink-0" />
           <span>{toast.message}</span>
         </div>
       )}
